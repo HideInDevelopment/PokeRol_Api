@@ -4,6 +4,7 @@ The idea is to build something like a pokemon game or maybe an animated Pokedex,
 
 ## FolderArchitecture:
 
+```
 /POKEROL_API
 │
 ├── /src
@@ -44,3 +45,4 @@ The idea is to build something like a pokemon game or maybe an animated Pokedex,
 ├── package.json -> Project dependencies and npm scripts
 ├── README.md -> Project documentation
 └── server.js -> Main application entry
+```
