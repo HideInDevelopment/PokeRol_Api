@@ -1,3 +1,5 @@
+import Pokemon from './pokemon';
+
 class User {
   constructor({
     id,
@@ -19,14 +21,19 @@ class User {
     this.gold = gold;
     this.badges = badges;
     this.achivements = achivements;
+
+    team.forEach((pokemon) => this.addToTeam(pokemon));
   }
 
   //Functions to manage some user interactions
 
-  //Function to add a new member to user team
-  addToTeam(member) {
+  //Function to add a new pokemon to user team
+  addToTeam(pokemon) {
+    if (!(pokemon instanceof Pokemon))
+      throw new Error('Only pokemons can be added to the team.');
+
     if (this.team.length < User.MAX_TEAM_SIZE) {
-      this.team.push(member);
+      this.team.push(pokemon);
       return true;
     } else return false;
   }

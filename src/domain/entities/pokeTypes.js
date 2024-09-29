@@ -1,0 +1,128 @@
+const PokeTypes = {
+  NORMAL: {
+    name: 'Normal',
+    effective: [],
+    ineffective: ['Rock', 'Steel'],
+    no_effect: ['Ghost'],
+  },
+  FIGHTING: {
+    name: 'Fighting',
+    effective: ['Normal', 'Ice', 'Rock', 'Dark', 'Steel'],
+    ineffective: ['Poison', 'Flying', 'Psychic', 'Bug', 'Fairy'],
+    no_effect: ['Ghost'],
+  },
+  FLYING: {
+    name: 'Flying',
+    effective: ['Grass', 'Fighting', 'Bug'],
+    ineffective: ['Electric', 'Rock', 'Steel'],
+    no_effect: [],
+  },
+  POISON: {
+    name: 'Poison',
+    effective: ['Grass', 'Fairy'],
+    ineffective: ['Poison', 'Ground', 'Rock', 'Ghost'],
+    no_effect: ['Steel'],
+  },
+  GROUND: {
+    name: 'Ground',
+    effective: ['Fire', 'Electric', 'Poison', 'Rock', 'Steel'],
+    ineffective: ['Grass', 'Bug'],
+    no_effect: ['Flying'],
+  },
+  ROCK: {
+    name: 'Rock',
+    effective: ['Fire', 'Ice', 'Flying', 'Bug'],
+    ineffective: ['Fighting', 'Ground', 'Steel'],
+    no_effect: [],
+  },
+  BUG: {
+    name: 'Bug',
+    effective: ['Grass', 'Psychic', 'Dark'],
+    ineffective: [
+      'Fire',
+      'Fighting',
+      'Poison',
+      'Flying',
+      'Ghost',
+      'Steel',
+      'Fairy',
+    ],
+    no_effect: [],
+  },
+  GHOST: {
+    name: 'Ghost',
+    effective: ['Psychic', 'Ghost'],
+    ineffective: ['Dark'],
+    no_effect: ['Normal'],
+  },
+  STEEL: {
+    name: 'Steel',
+    effective: ['Ice', 'Rock', 'Fairy'],
+    ineffective: ['Fire', 'Water', 'Electric', 'Steel'],
+    no_effect: [],
+  },
+  FIRE: {
+    name: 'Fire',
+    effective: ['Grass', 'Ice', 'Bug', 'Steel'],
+    ineffective: ['Fire', 'Water', 'Rock', 'Dragon'],
+    no_effect: [],
+  },
+  WATER: {
+    name: 'Water',
+    effective: ['Fire', 'Ground', 'Rock'],
+    ineffective: ['Water', 'Grass', 'Dragon'],
+    no_effect: [],
+  },
+  GRASS: {
+    name: 'Grass',
+    effective: ['Water', 'Ground', 'Rock'],
+    ineffective: [
+      'Fire',
+      'Grass',
+      'Poison',
+      'Flying',
+      'Bug',
+      'Dragon',
+      'Steel',
+    ],
+    no_effect: [],
+  },
+  ELECTRIC: {
+    name: 'Electric',
+    effective: ['Water', 'Flying'],
+    ineffective: ['Electric', 'Grass', 'Dragon'],
+    no_effect: ['Ground'],
+  },
+  PSYCHIC: {
+    name: 'Psychic',
+    effective: ['Fighting', 'Poison'],
+    ineffective: ['Psychic', 'Steel'],
+    no_effect: ['Dark'],
+  },
+  ICE: {
+    name: 'Ice',
+    effective: ['Grass', 'Ground', 'Flying', 'Dragon'],
+    ineffective: ['Fire', 'Water', 'Ice', 'Steel'],
+    no_effect: [],
+  },
+  DRAGON: {
+    name: 'Dragon',
+    effective: ['Dragon'],
+    ineffective: ['Steel'],
+    no_effect: ['Fairy'],
+  },
+  DARK: {
+    name: 'Dark',
+    effective: ['Psychic', 'Ghost'],
+    ineffective: ['Fighting', 'Dark', 'Fairy'],
+    no_effect: [],
+  },
+  FAIRY: {
+    name: 'Fairy',
+    effective: ['Fighting', 'Dragon', 'Dark'],
+    ineffective: ['Fire', 'Poison', 'Steel'],
+    no_effect: [],
+  },
+};
+
+export default PokeTypes;
