@@ -1,6 +1,7 @@
 import Movement from './movement';
 import PokeTypes from './pokeTypes';
 
+let typesDict = [];
 class Pokemon {
   constructor({
     id,
@@ -25,6 +26,7 @@ class Pokemon {
     this.generation = generation;
     this.stats = stats;
 
+    typesDict = toLoadTypes(PokeTypes);
     moveset.forEach((movement) => this.addToMoveset(movement));
     types.forEach((type) => this.setTypes(type));
   }
@@ -45,11 +47,11 @@ class Pokemon {
   }
 
   setTypes(type) {
-    if (!Object.values(PokeTypes).includes(type))
+    if (!typesDict.map((x) => x.name).includes(type))
       throw new Error(
-        `Invalid type: ${type} is not in the allowed types.(${Object.values(
-          PokeTypes
-        ).joint(', ')})`
+        `Invalid type: ${type} is not in the allowed types.(${typesDict
+          .map((x) => x.name)
+          .join(', ')})`
       );
 
     if (
@@ -61,6 +63,27 @@ class Pokemon {
       this.types.push(type);
       return true;
     }
+  }
+
+  toLoadTypes(pokeTypes) {
+    const typeArrays = [];
+
+    for (const key in pokeTypes) {
+      if (pokeTypes.hasOwnProperty(key)) {
+        const typeData = pokeTypes[key];
+
+        const type = new Type({
+          id: key,
+          name: typeData.name,
+          effective: typeData.effective,
+          ineffective: typeData.ineffective,
+          noEffect: typeData.noEffect,
+        });
+
+        typeArrays.push(type);
+      }
+    }
+    return typeArrays;
   }
 }
 
